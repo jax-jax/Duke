@@ -1,0 +1,78 @@
+// 
+//stripes of RGB
+//
+
+//start with image your ant to change
+var img = new SimpleImage("smallpanda.png");
+   
+
+    for (var pixel of img.values()) {
+//figure out image width
+        var width = img.getWidth();
+//iterate for each pixel if x-coordinate is 1/3 of image
+        if (pixel.getX() <= (width/3)) {
+//change red to 255
+            pixel.setRed(255);
+        } 
+//if x-coordinate is 1/3- 2/3 of image 
+        else if ((width/3) < pixel.getX() && pixel.getX() <= ((width*2)/3)) {
+//change green to 255
+           pixel.setGreen(255);
+        }
+// if x-coordinates are (2/3)-(3/3) of image set blue to 255
+        else {
+            pixel.setBlue(255);
+        } 
+    }
+//print image         
+print(img);
+
+
+//
+//Swap Reds and Greens
+//
+
+//select image with noticeable green and red colors that can be spotted easily
+var eggSwap = new SimpleImage("eastereggs.jpg");
+
+//Write a function called swapRedGreen that takes one parameter named pixel
+function swapRedGreen(pixel) {
+//create variables to store the values of the pixel's Green and Red values
+    var greenP= pixel.getGreen();
+    var redP = pixel.getRed();
+//Swap Green and Red values and set them to pixel's Red and Green Values
+    pixel.setRed(greenP);
+    pixel.setGreen(redP);
+}
+
+// iterate through image's pixels and use function swapRedGreen
+for (var pixel of eggSwap.values()) {
+    swapRedGreen(pixel);
+}
+
+//Print image
+print(eggSwap);
+
+
+//Duke's logo change from Duke Blue to Yellow
+
+var logo = new SimpleImage("duke_blue_devil.png");
+
+function turnBlueYellow(pixel) {
+    if (pixel.getRed() == 0) {
+        pixel.setRed(255);
+        pixel.setGreen(255);
+        pixel.setBlue(0);
+    } else {
+        pixel.setRed(255);
+        pixel.setGreen(255);
+        pixel.setBlue(255);
+    }
+}
+    
+//Add the white for else, because other pixels were black or transparent. 
+
+for (var pixel of logo.values()) {
+   turnBlueYellow(pixel);
+}
+print(logo);

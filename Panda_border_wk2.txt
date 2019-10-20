@@ -1,0 +1,25 @@
+// write your code here
+function setBlack(pixel) {
+    pixel.setGreen(0);
+    pixel.setRed(0);
+    pixel.setBlue(0);
+}
+
+var panda = new SimpleImage("smallpanda.png");
+
+//iterate thru each pixel in the image
+for (var pixel of panda.values()) {
+    var borderWidth = panda.getWidth();
+    var borderHeight = panda.getHeight();
+    //if pixel is sides 10px of image turn pixels black
+    if (pixel.getX() <= 10 || pixel.getX() >= borderWidth - 10) {
+    // change pixel to black with function 
+        setBlack(pixel);
+    }
+    //if top and bottom 10px 
+    if (pixel.getY() <= 10 || pixel.getY() >= borderHeight - 10) {
+        setBlack(pixel);
+    }
+}
+
+print(panda);

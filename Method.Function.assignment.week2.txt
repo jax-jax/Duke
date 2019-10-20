@@ -1,0 +1,100 @@
+// write your code here
+var dog = 'Waldo';
+var owner = 'Mike';
+var tag =  owner + "'s dog is named " + dog;
+
+print(tag);
+
+var x = 3; 
+var y = 2;
+var z = x + 2*y;
+print(x);
+print(y);
+print(z);
+
+var x = 3;
+var y = 2;
+y = x;
+print (x);
+print (y);
+
+//image methods
+
+var image = new SimpleImage("chapel.png");
+print(image);
+
+var dino = new SimpleImage("dinos.png");
+
+print(dino)
+
+var dinoWidth = dino.getWidth();
+print("Dino image width is " + dinoWidth);
+
+var dinoHeight = dino.getHeight();
+print("Dino image height is " + dinoHeight);
+
+var dinoPixels = dino.getPixel(100,469);
+print("Dino has " + dinoPixels + " pixel color at [100,469]");
+
+var dinoRed = dino.getRed(100,800);
+var dinoGreen = dino.getGreen(100,800);
+var dinoBlue = dino.getBlue(100,800);
+
+print(dinoRed + " ," + dinoGreen + " ," + dinoBlue)
+
+//functions
+
+function square(x){
+	var ans = x*x;
+	return ans;
+}
+
+var y = square(4);
+print(y);
+
+var w = square(16);
+print(w);
+
+var a = square(36);
+print(a);
+
+var b = square(555);
+print(b);
+
+//Extra challenge
+
+function cube(x){
+    var ans = x*x*x;
+    return ans;
+}
+
+var c = cube(4);
+print(c);
+
+function addThree(a, b, c){
+    var ans = a+b+c;
+    return ans
+}
+
+var d = addThree(4,5,1);
+
+print(d);
+
+function addTwoStrings(a,b){
+    var ans = a + " " + b;
+    return ans
+}
+
+var e = addTwoStrings("Hi", "Waldo");
+print(e);
+
+function dimensionImage(x){
+    var image = new SimpleImage(x);
+    var ans = image.getWidth() + ", " + image.getHeight();
+    return ans
+}
+
+var chapDim = dimensionImage("chapel.png");
+print(chapDim);
+
+

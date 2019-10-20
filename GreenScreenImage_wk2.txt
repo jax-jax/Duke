@@ -1,0 +1,24 @@
+// write your code here
+// Green screen image 
+var gsImage = new SimpleImage("drewRobert.png");
+//Background Image
+var bgImage = new SimpleImage("dinos.png");
+//finalImage
+var finalImage = new SimpleImage(gsImage.getWidth(), gsImage.getHeight());
+//Iterate through Green screen pixels 
+for(var pixel of gsImage.values()) {
+// Look at current pixel and check if it's green 
+    if(pixel.getGreen() > pixel.getRed() + pixel.getBlue()){
+//If green, assign Background image to final image at pixel position of green screen image pixel
+        var x = pixel.getX();
+        var y = pixel.getY();
+        var bgPixel = bgImage.getPixel(x,y);
+        finalImage.setPixel(x, y, bgPixel);
+}
+//Otherwise, assign green screen pixel to final image at pixel position 
+    else {
+        finalImage.setPixel(pixel.getX(), pixel.getY(), pixel);
+    }
+}
+// show picture
+print(finalImage);

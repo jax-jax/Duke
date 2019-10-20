@@ -1,0 +1,20 @@
+// write your code here
+var yellowSubmarine = new SimpleImage(200,200);
+
+for (var pixel of yellowSubmarine.values()) {
+    var newP = 255 + pixel.getGreen();
+    pixel.setRed(newP);
+    pixel.setGreen(newP);
+}
+
+print(yellowSubmarine);
+
+var magenta = new SimpleImage(200,200);
+
+for (var pixel of magenta.values()) {
+    var newP = 255 + pixel.getRed();
+    pixel.setRed(newP);
+    pixel.setBlue(newP);
+}
+
+print(magenta);
